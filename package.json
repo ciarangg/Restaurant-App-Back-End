@@ -4,6 +4,7 @@
   "description": "app",
   "main": "app.js",
   "scripts": {
+    "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,5 +24,8 @@
     "express": "^4.16.4",
     "mongodb": "^3.2.3",
     "mongoose": "^5.5.3"
+  },
+  "devDependencies": {
+    "dotenv": "^7.0.0"
   }
 }
