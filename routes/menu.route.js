@@ -1,20 +1,23 @@
 const express = require('express');
 const router = express.Router();
 
+// The way you were naming your variables was not correct  
+// Take a look @ this :: http://crockford.com/javascript/code.html
+
 // Require the controllers WHICH WE DID NOT CREATE YET!!
-const menu_controller = require('../controllers/menu.controller');
+const menuService = require('../services/menu.service');
 
 
 // a simple test url to check that all of our files are communicating correctly.
 
-router.get('/', menu_controller.menu_all);
+router.get('/', menuService.getAllItemsInMenu);
 
-router.post('/create', menu_controller.menu_create);
+router.post('/create', menuService.createMenu);
 
-router.get('/:id', menu_controller.menu_details);
+router.get('/:id', menuService.getMenuDetails);
 
-router.put('/:id/update', menu_controller.menu_update);
+router.put('/:id/update', menuService.updateMenu);
 
-router.delete('/:id/delete', menu_controller.menu_delete);
+router.delete('/:id/delete', menuService.deleteItemFromMenu);
 
 module.exports = router;
