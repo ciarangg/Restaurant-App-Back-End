@@ -5,7 +5,6 @@ const bodyParser = require('body-parser');
 const menu = require('./routes/menu.route'); // Imports routes for the menu
 const cors = require('cors');
 
-app.use(cors())
 
 // Set up mongoose connection
 const mongoose = require('mongoose');
@@ -20,16 +19,12 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
+app.use(cors())
 app.use('/menu', menu);
 
-
-
 app.listen(port, () => {
-    console.log(`I'm listening on ${port}`)
+    console.log(`Server listening on http://localhost:${port}`);
 })
-
-
-
 
 module.exports = app;
 
