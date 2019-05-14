@@ -3,9 +3,10 @@ const mongoose = require('mongoose')
 
 
 let shoppingCartSchema = new mongoose.Schema({
-    title: String,
-    description: String,
-    price: Number
+    time: { type: Number, default: (new Date()).getTime() } ,
+    price: Number,
+    content: Array
+
 })
 
 
