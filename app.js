@@ -3,6 +3,8 @@ const app = express();
 const port = process.env.PORT || 5000;
 const bodyParser = require('body-parser');
 const menu = require('./routes/menu.route'); // Imports routes for the menu
+const user = require('./routes/user.route'); // 
+const shoppingCart = require('./routes/shoppingCart.route'); 
 const cors = require('cors');
 
 
@@ -21,6 +23,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.use(cors())
 app.use('/menu', menu);
+app.use('/user', user);
+app.use('shoppingCart', shoppingCart);
 
 app.listen(port, () => {
     console.log(`Server listening on http://localhost:${port}`);
